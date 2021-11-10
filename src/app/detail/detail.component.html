@@ -1,0 +1,18 @@
+<div class="d-flex justify-center flex-column text-center align-items-center">
+  <h4>Benvenuti nello shop di</h4>
+  <img src="https://www.develhope.co/_nuxt/img/cav_black.9dc2b13.svg" alt="logo-develhope">
+  <p>clicca sul prodotto per visualizzarne i dettagli!</p>
+</div>
+
+<div class="container d-flex " *ngIf="product">
+<h1>Dettagli prodotto</h1>
+<div>
+  <img [src]="product.img">
+  <h1>{{product.title}}</h1>
+  <p>{{product.description}}</p>
+  <h5>{{product.price}}</h5>
+
+
+</div>
+</div>
+

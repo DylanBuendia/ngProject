@@ -1,0 +1,4 @@
+<div class="d-flex justify-content-between">
+  <ngApp-list class="vw-25 vh-100"  (selected)="showDetails($event)"    [prodotti]="products"></ngApp-list>
+  <ngApp-detail [product]="selectedProduct"></ngApp-detail>
+</div>

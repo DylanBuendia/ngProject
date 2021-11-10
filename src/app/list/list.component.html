@@ -1,0 +1,14 @@
+<div class="d-flex flex-column">
+  <div *ngFor="let product of prodotti">
+    <div class="border w-50">
+      <div>
+        <img class="w-25" [src]="product.img">
+        <h5 class="card-title">
+          {{product.title}}
+        </h5>
+        <p class="card-text"> {{product.price}} €</p>
+        <button class="btn btn-primary btn-small" (click)="selectProduct(product)"> Show details</button>
+      </div>
+    </div>
+  </div>
+</div>
