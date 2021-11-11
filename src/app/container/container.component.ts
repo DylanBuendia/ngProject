@@ -7,7 +7,8 @@ import { ProductInt } from '../models/productInt';
   styleUrls: ['./container.component.scss']
 })
 export class ContainerComponent implements OnInit {
-  selectedProduct! : ProductInt;
+  selectedProduct ? : ProductInt;
+  itemsIntoTheCart : number = 0;
 
   products : ProductInt[] = [
     {
@@ -49,5 +50,13 @@ export class ContainerComponent implements OnInit {
 
   showDetails(product:ProductInt){
     this.selectedProduct = product;
+
+  }
+  closeDetail(prod : ProductInt){
+    this.selectedProduct = undefined;
+  }
+
+  addProductToCart(num : number) : void{
+    this.itemsIntoTheCart += num;
   }
 }

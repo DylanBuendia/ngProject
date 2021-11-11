@@ -1,14 +1,13 @@
-<div class="d-flex flex-column">
+<div class="d-flex flex-column align-items-end justify-content-around w-100">
   <div *ngFor="let product of prodotti">
-    <div class="border w-50">
-      <div>
+      <div class="container border d-flex flex-column justify-content-center align-items-center p-2">
         <img class="w-25" [src]="product.img">
         <h5 class="card-title">
           {{product.title}}
         </h5>
         <p class="card-text"> {{product.price}} €</p>
-        <button class="btn btn-primary btn-small" (click)="selectProduct(product)"> Show details</button>
+        <button class="btn btn-warning btn-small" (click)="selectProduct(product)"> Show details</button>
       </div>
-    </div>
+
   </div>
 </div>

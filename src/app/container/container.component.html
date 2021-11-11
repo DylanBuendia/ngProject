@@ -1,4 +1,7 @@
-<div class="d-flex justify-content-between">
-  <ngApp-list class="vw-25 vh-100"  (selected)="showDetails($event)"    [prodotti]="products"></ngApp-list>
-  <ngApp-detail [product]="selectedProduct"></ngApp-detail>
+<div class="row justify-content-center">
+  <ngApp-header class="col-11" [itemsCounter]="itemsIntoTheCart"></ngApp-header>
+</div>
+<div class="row">
+  <ngApp-list class=" col-3"  (selected)="showDetails($event)"    [prodotti]="products"></ngApp-list>
+  <ngApp-detail  class="col-9" [product]="selectedProduct"  (addToCart)="addProductToCart($event)" (closed)="closeDetail($event)"></ngApp-detail>
 </div>
