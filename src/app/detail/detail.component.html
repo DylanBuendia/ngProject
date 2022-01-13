@@ -1,18 +1,31 @@
-<div class=" container d-flex justify-content-center flex-column text-center align-items-center">
+<div class="d-flex justify-content-center flex-column text-center align-items-center h-100" *ngIf="!product">
   <h4>Benvenuti nello shop di</h4>
   <img src="https://www.develhope.co/_nuxt/img/cav_black.9dc2b13.svg" alt="logo-develhope">
   <p>clicca sul prodotto per visualizzarne i dettagli!</p>
 </div>
 
-<div class="container d-flex " *ngIf="product">
-<h1>Dettagli prodotto</h1>
-<div>
-  <img [src]="product.img">
-  <h1>{{product.title}}</h1>
-  <p>{{product.description}}</p>
-  <h5>{{product.price}}</h5>
+<div class="container w-75" *ngIf="product">
+  <h1>Dettagli prodotto</h1>
+  <div class="border p-5">
+    <div class="d-flex gap-5" >
+      <img [src]="product.img" class="img-thumbnail w-50">
+      <div>
+        <h1>{{product.title}}</h1>
+        <p class="ts-3"> <b>Anno di uscita :</b>  {{product.exitYear}} </p>
+        <p class="ts-3"> <b>Altezza :</b>  {{product.productHeight}} mm</p>
+        <p class="ts-3"> <b>Peso :</b>  {{product.productWeight}} g</p>
+        <p class="ts-3"> <b>Pezzi prodotto :</b>  {{product.itemsProduced}} </p>
+      </div>
+    </div>
+    <div>
+      <p>{{product.description}}</p>
+      <h5 class="fw-bolder">{{product.price}} €</h5>
+    </div>
+    <div class="d-flex justify-content-between">
+      <button class="btn btn-warning btn-small" (click)="addToCart.emit(1)">Acquista</button>
+      <button class="btn btn-primary btn-small" (click)="close(product)">Chiudi</button>
+    </div>
 
-
-</div>
+  </div>
 </div>
 
